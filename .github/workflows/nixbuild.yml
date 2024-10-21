@@ -1,5 +1,10 @@
 name: "Build Poker Firmware"
 on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - master
   workflow_dispatch:
 jobs:
   build:
