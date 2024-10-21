@@ -31,6 +31,7 @@ jobs:
           clearEnvForScript: true # `SOME_ENV_VAR` will not be visible; nor will
           script: |
             make
+            make build/ikbc_poker2.bin
       - name: Upload Firmware Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
@@ -38,4 +39,5 @@ jobs:
           path: |
             ${{github.workspace}}/build/poker2.hex
             ${{github.workspace}}/build/poker2.bin
+            ${{github.workspace}}/build/ikbc_poker2.bin
           if-no-files-found: error

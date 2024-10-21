@@ -53,22 +53,16 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = /* qwerty */
   KMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, EQL,  BSPC,
        TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, BSLS,
-       LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT, NUHS, ENT,
+       FN0,  A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT, NUHS, ENT,
        LSFT, NUBS, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH, RSFT,
-       LCTL, LGUI, LALT,               SPACE,                RALT, FN0,  APP,  RCTL)
-  [1] = /* qwerty mac */
-  KMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, EQL,  BSPC,
-       TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, BSLS,
-       LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT, NUHS, ENT,
-       LSFT, NUBS, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH, RSFT,
-       LCTL, LALT, LGUI,               SPACE,                RALT,  FN0,  APP,  RCTL)
-  [2] = /* dvorak */
+       LCTL, LGUI, LALT,               SPACE,                RALT, RGUI, APP,  RCTL)
+  [1] = /* dvorak */
   KMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    LBRC, RBRC,  BSPC,
        TAB,  QUOT, COMM, DOT,  P,    Y,    F,    G,    C,    R,    L,    SLSH, EQL,   BSLS,
-       LCTL, A,    O,    E,    U,    I,    D,    H,    T,    N,    S,    MINS, NUHS,  ENT,
+       FN0,  A,    O,    E,    U,    I,    D,    H,    T,    N,    S,    MINS, NUHS,  ENT,
        LSFT, NUBS, SCLN, Q,    J,    K,    X,    B,    M,    W,    V,    Z,    RSFT,
-       LCTL, LGUI, LALT,               SPACE,                RALT, FN0,  APP,  RCTL)
-  [3] =
+       LCTL, LGUI, LALT,               SPACE,                RALT, RGUI, APP,  RCTL)
+  [2] =
   KMAP(BTLD, F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,  DEL,
        FN1,  TRNS, UP,   TRNS, TRNS, TRNS, WH_U, TRNS, MS_U, TRNS, PSCR, SLCK, PAUS, INS,
        TRNS, LEFT, DOWN, RGHT, TRNS, TRNS, WH_D, MS_L, MS_D, MS_R, HOME, PGUP, INS,  TRNS,
@@ -77,10 +71,10 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const action_t fn_actions[] = {
-  [0] = ACTION_LAYER_TAP_KEY(3, KC_ESC),
+  [0] = ACTION_LAYER_TAP_KEY(2, KC_ESC),
   [1] = ACTION_FUNCTION_TAP(PRINT_HARDFAULT_PC),
   [2] = ACTION_FUNCTION_TAP(DEBUGPRINT_LDROM),
-  [3] = ACTION_DEFAULT_LAYER_TOGGLE(1), /* toggle qwerty win or mac*/
+  [3] = ACTION_DEFAULT_LAYER_TOGGLE(1), /* toggle qwerty/dvorak */
 };
 
 /*

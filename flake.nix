@@ -18,11 +18,23 @@
           dfu-programmer dfu-util diffutils git
           openocd
           sigrok-cli
+          srecord
+          (pkgs.python311.withPackages (python-pkgs: with python-pkgs; [
+            # select Python packages here
+          pyusb
+          ]))
         ];
       };
       build = pkgs.mkShell {
         packages = with pkgs; [
           gcc-arm-embedded 
+          (pkgs.python311.withPackages (python-pkgs: with python-pkgs; [
+            # select Python packages here
+          pyusb
+          ]))
+          srecord
+        ];
+        buildInputs  = [
         ];
       };
     });
